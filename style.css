@@ -312,83 +312,157 @@ section{
 
 /* ===== RESPONSIVIDADE ===== */
 
-@media(max-width:768px){
+/* =========================
+   RESPONSIVIDADE COMPLETA
+========================= */
+
+@media (max-width: 768px) {
+
+    body{
+        font-size: 16px;
+    }
+
+    /* MENU */
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+    nav li{
+        margin: 0 12px;
+        flex-shrink: 0;
+    }
+
+    nav a{
+        font-size: 14px;
+    }
+
+    /* HEADER */
+
+    header{
+        min-height: 75vh;
+        height: auto;
+        padding: 120px 20px 60px;
+    }
 
     header h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
     }
 
     header p{
         font-size: 1rem;
+        max-width: 100%;
     }
 
-    nav ul{
-        flex-direction: column;
-        padding: 10px;
+    /* CONTEÚDO */
+
+    main{
+        width: 95%;
     }
 
     section{
-        padding: 25px;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 15px;
     }
 
+    section h2{
+        font-size: 1.6rem;
+    }
+
+    section h3{
+        font-size: 1.2rem;
+    }
+
+    section ul,
+    section ol{
+        margin-left: 20px;
+    }
+
+    /* CARDS */
+
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .card h3{
+        font-size: 1.5rem;
+    }
+
+    /* IMAGENS */
+
+    .imagem-conteudo{
+        margin: 15px 0;
+    }
+
+    .imagem-conteudo img{
+        width: 100%;
+        height: auto;
+    }
+
+    /* BANNER */
+
     .banner-section{
-        height: 250px;
+        height: 220px;
+        background-attachment: scroll;
     }
 
     .banner-section h2{
-        font-size: 2rem;
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 10px;
     }
-}.hidden{
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-}
 
-.show{
-    opacity: 1;
-    transform: translateY(0);
-}
+    /* TABELAS */
 
-#topo{
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 
-    width: 55px;
-    height: 55px;
+    /* BOTÃO */
 
-    border: none;
-    border-radius: 50%;
+    .botao{
+        width: 100%;
+        text-align: center;
+    }
 
-    background: #4caf50;
-    color: white;
+    /* VOLTAR AO TOPO */
 
-    font-size: 22px;
-    cursor: pointer;
+    #topo{
+        width: 50px;
+        height: 50px;
+        right: 15px;
+        bottom: 15px;
+    }
 
-    display: none;
+    /* FOOTER */
 
-    box-shadow: 0 5px 15px rgba(0,0,0,.25);
-
-    z-index: 999;
-}
-
-#topo:hover{
-    transform: scale(1.1);
-}
-
-.ativo{
-    color: #2e7d32 !important;
-    border-bottom: 2px solid #2e7d32;
-}
-
-.frase-dia{
-    background: #e8f5e9;
-    color: #2e7d32;
-
-    text-align: center;
-
-    padding: 12px;
-
-    font-weight: bold;
+    footer{
+        padding: 30px 15px;
+        font-size: 14px;
+    }
 }
