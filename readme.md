@@ -1,179 +1,46 @@
-# 🌱 AGRINHO 2026 – AGRO FORTE, FUTURO SUSTENTÁVEL
+# 🍃 Portal Agro Forte, Futuro Sustentável
 
-<div align="center">
-
-# 🚜 Agro Forte, Futuro Sustentável
-### Equilíbrio entre Produção, Tecnologia e Preservação Ambiental
-
-![Agrinho 2026](https://img.shields.io/badge/Agrinho-2026-green?style=for-the-badge)
-![HTML5](https://img.shields.io/badge/HTML5-Estrutura-orange?style=for-the-badge)
-![CSS3](https://img.shields.io/badge/CSS3-Design-blue?style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-Interatividade-yellow?style=for-the-badge)
-
-### 🌎 Produzir com responsabilidade é cultivar o futuro.
-
-</div>
+> **Projeto desenvolvido para o Concurso Agrinho 2026 - Paraná** > *Categoria: Produção de Site Web (Ensino Médio)*
 
 ---
 
-# 📖 Sobre o Projeto
-
-O projeto **Agro Forte, Futuro Sustentável** foi desenvolvido para participação no **Programa Agrinho 2026**, com o objetivo de conscientizar a população sobre a importância do agronegócio sustentável e o papel da tecnologia na preservação dos recursos naturais.
-
-A proposta apresenta informações educativas, dados relevantes e recursos interativos que demonstram como é possível aumentar a produtividade agrícola sem comprometer o meio ambiente, promovendo equilíbrio entre desenvolvimento econômico, responsabilidade social e conservação ambiental.
-
----
-
-# 🎯 Objetivo
-
-Desenvolver uma plataforma educativa e acessível que incentive a reflexão sobre a importância da sustentabilidade no campo, destacando práticas agrícolas responsáveis, inovação tecnológica e preservação dos recursos naturais para as futuras gerações.
+## 👤 Autoria e Desenvolvimento
+* **Criadora do Projeto:** Gabrielli Taisa Afonso Torello
+* **Série:** 1º Ano do Ensino Médio
+* **Ambiente de Desenvolvimento:** Visual Studio Code (VSCode)
 
 ---
 
-# 🌾 Temas Abordados
+## 📝 Sobre o Projeto
+O portal **"Agro Forte, Futuro Sustentável"** é um site educacional e informativo projetado para demonstrar o equilíbrio crucial entre a força produtiva do agronegócio e a preservação ambiental no estado do Paraná. 
 
-- Introdução ao Agronegócio
-- Importância do Agro para o Brasil
-- Sustentabilidade no Campo
-- Tecnologia e Inovação Agrícola
-- Agricultura de Precisão
-- Boas Práticas Sustentáveis
-- Desafios Ambientais
-- Futuro do Agronegócio
-- Curiosidades do Agro
-- Quiz Interativo sobre Sustentabilidade
+Com uma abordagem de portal de notícias confiável, o site visa conscientizar a comunidade escolar e a população em geral sobre como as inovações tecnológicas do campo (Agricultura 4.0 e 5.0) garantem a segurança alimentar global enquanto combatem as mudanças climáticas e protegem os ecossistemas nativos.
 
 ---
 
-# 💡 Justificativa
+## ✨ Funcionalidades e Diferenciais
 
-O agronegócio é responsável por alimentar bilhões de pessoas em todo o mundo e possui enorme relevância para a economia brasileira. Entretanto, o crescimento da produção deve ocorrer de forma consciente e sustentável.
-
-Diante desse cenário, este projeto busca demonstrar que tecnologia, inovação e preservação ambiental podem caminhar juntas, contribuindo para uma agricultura mais eficiente, sustentável e preparada para os desafios do futuro.
-
----
-
-# ✨ Funcionalidades do Site
-
-## 🎨 Design Moderno
-- Interface intuitiva e agradável
-- Layout responsivo
-- Visual inspirado na natureza
-
-## ⚡ Interatividade
-- Menu de navegação dinâmica
-- Animações durante a rolagem
-- Contadores estatísticos
-- Quiz educativo
-- Botão de retorno ao topo
-- Frases motivacionais aleatórias
-
-## 📚 Conteúdo Educativo
-- Informações organizadas por temas
-- Linguagem acessível
-- Incentivo à conscientização ambiental
+* **Identidade Visual Soft-Tech:** Cores em tons de verde sálvia, folha e terra, promovendo uma leitura confortável, profissional e conectada à natureza.
+* **Experiência Imersiva (Ambientação Física):** Um algoritmo em JavaScript gera dinamicamente folhas caindo pela tela em velocidades e tamanhos aleatórios, simulando a atmosfera do campo de forma leve, sem atrapalhar a navegação do usuário.
+* **FAQ Interativo (Sistema de Accordion):** Perguntas frequentes construídas de forma nativa e semântica com as tags `<details>` e `<summary>`, economizando espaço e instigando a curiosidade.
+* **Desafio Agro (Quiz Explicativo Dinâmico):** Sistema de perguntas e respostas ramificado que bloqueia tentativas repetidas e fornece justificativas pedagógicas detalhadas e imediatas para as respostas certas ou erradas.
+* **Design 100% Responsivo:** Adaptável para computadores, tablets e smartphones (Mobile-First Layout).
 
 ---
 
-# 🚜 Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia | Finalidade |
-|------------|------------|
-| HTML5 | Estruturação do conteúdo |
-| CSS3 | Estilização e responsividade |
-| JavaScript | Recursos interativos |
+Para garantir a melhor avaliação técnica no concurso, o projeto foi desenvolvido utilizando **código limpo e nativo**, sem dependência de frameworks externos:
 
----
-
-# 🌱 Sustentabilidade em Destaque
-
-O projeto valoriza práticas agrícolas que contribuem para a preservação ambiental:
-
-✅ Plantio Direto
-
-✅ Rotação de Culturas
-
-✅ Integração Lavoura-Pecuária-Floresta
-
-✅ Proteção de Nascentes
-
-✅ Agricultura de Precisão
-
-✅ Uso Racional da Água
-
-✅ Energia Renovável
-
-✅ Conservação do Solo
-
-✅ Preservação da Biodiversidade
+* **HTML5:** Estrutura semântica rigorosa (`<header>`, `<main>`, `<section>`, `<footer>`) facilitando a acessibilidade e indexação.
+* **CSS3:** Animações avançadas (`@keyframes`), variáveis de ambiente (`:root`), desfoque de fundo moderno (`backdrop-filter`) e design responsivo (`Flexbox`).
+* **JavaScript (Vanilla JS):** Manipulação dinâmica da árvore de elementos (DOM) para as folhas decorativas aleatórias e validação lógica dos blocos isolados do quiz.
 
 ---
 
-# 🌎 Impacto Social e Educacional
-
-Este projeto foi desenvolvido com foco na educação e conscientização ambiental, estimulando estudantes e visitantes a compreenderem a importância da sustentabilidade no campo.
-
-Ao unir tecnologia e conhecimento, o site busca contribuir para a formação de cidadãos mais conscientes, preparados para enfrentar os desafios ambientais e participar ativamente da construção de um futuro sustentável.
-
----
-
-# 🏆 Contribuição para o Programa Agrinho
-
-O projeto está alinhado aos princípios do Programa Agrinho ao promover:
-
-- Educação Ambiental;
-- Sustentabilidade;
-- Cidadania;
-- Inovação Tecnológica;
-- Valorização do Meio Rural;
-- Responsabilidade Social.
-
----
-
-# 📂 Estrutura do Projeto
+## 📁 Estrutura de Arquivos
 
 ```text
-Projeto-Agrinho-2026
-│
-├── index.html
-├── style.css
-├── script.js
-│
-└── imagens/
-    ├── banner-agro.jpg
-    ├── sustentabilidade.jpg
-    ├── tecnologia.jpg
-    └── demais imagens do projeto
-```
-
----
-
-# 👩‍💻 Autoria
-
-## Desenvolvido por
-
-### Gabrielli Taisa Afonso Torello
-
-Projeto criado para participação no **Programa Agrinho 2026**, demonstrando como a tecnologia pode ser utilizada como ferramenta de educação, conscientização ambiental e valorização do agronegócio sustentável.
-
----
-
-# 🌟 Mensagem Final
-
-> "O futuro da agricultura depende das decisões tomadas hoje.
-> Produzir com responsabilidade significa preservar recursos,
-> proteger a vida e garantir alimento para as próximas gerações."
-
----
-
-<div align="center">
-
-## 🌱🚜💚
-
-### AGRINHO 2026
-
-**Educação • Sustentabilidade • Tecnologia • Futuro**
-
-**Desenvolvido por Gabrielli Taisa Afonso Torello**
-
-</div>
+├── index.html     # Estrutura de conteúdo, dados estatísticos e seções do site.
+├── style.css      # Estilização visual, paleta de cores e animação das folhas.
+└── script.js      # Gerador orgânico de folhas e lógica de interatividade do quiz.
