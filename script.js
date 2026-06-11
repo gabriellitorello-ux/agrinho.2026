@@ -1,185 +1,91 @@
-// ===========================
-// ANIMAÇÃO AO ROLAR A PÁGINA
-// ===========================
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-
+/* ==========================================================================
+   1. LÓGICA DO QUIZ INTERATIVO (VERSÃO DEFINITIVA E INFALÍVEL)
+   ========================================================================== */
+function verificarResposta(isCorreta, botaoClicado, textoSucesso, textoErro) {
+    // Encontra o bloco da pergunta atual (.quiz-item)
+    const containerPergunta = botaoClicado.closest('.quiz-item');
+    
+    // Seleciona a caixinha de feedback que está exatamente dentro desta pergunta
+    const feedbackDiv = containerPergunta.querySelector('.feedback');
+    
+    // Seleciona apenas os botões desta pergunta para bloqueá-los
+    const botoes = containerPergunta.querySelectorAll('.opcao-btn');
+    
+    botoes.forEach(botao => {
+        botao.disabled = true;
+        botao.style.cursor = 'not-allowed';
+        botao.style.opacity = '0.6';
     });
-},{
-    threshold: 0.15
-});
 
-sections.forEach(section =>{
-    section.classList.add("hidden");
-    observer.observe(section);
-});
+    // Destaca o botão escolhido
+    botaoClicado.style.opacity = '1';
 
-// ===========================
-// BOTÃO VOLTAR AO TOPO
-// ===========================
+    // Mostra o feedback removendo o "oculto"
+    feedbackDiv.classList.remove('oculto', 'sucesso', 'erro');
 
-const botaoTopo = document.createElement("button");
-
-botaoTopo.innerHTML = "↑";
-botaoTopo.id = "topo";
-
-document.body.appendChild(botaoTopo);
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 500){
-        botaoTopo.style.display = "block";
-    }else{
-        botaoTopo.style.display = "none";
+    if (isCorreta) {
+        // Estilo Verde
+        botaoClicado.style.backgroundColor = '#2d6a4f';
+        botaoClicado.style.color = '#ffffff';
+        botaoClicado.style.borderColor = '#2d6a4f';
+        
+        feedbackDiv.textContent = textoSucesso;
+        feedbackDiv.classList.add('sucesso');
+    } else {
+        // Estilo Vermelho
+        botaoClicado.style.backgroundColor = '#e63946';
+        botaoClicado.style.color = '#ffffff';
+        botaoClicado.style.borderColor = '#e63946';
+        
+        feedbackDiv.textContent = textoErro;
+        feedbackDiv.classList.add('erro');
     }
-
-});
-
-botaoTopo.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-// ===========================
-// MENU ATIVO
-// ===========================
-
-const links = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 150;
-
-        if(pageYOffset >= sectionTop){
-            current = section.getAttribute("id");
-        }
-
-    });
-
-    links.forEach(link => {
-
-        link.classList.remove("ativo");
-
-        if(link.getAttribute("href") === "#" + current){
-            link.classList.add("ativo");
-        }
-
-    });
-
-});
-
-// ===========================
-// FRASE SUSTENTÁVEL ALEATÓRIA
-// ===========================
-
-const frases = [
-
-    "Produzir com responsabilidade é cultivar o futuro.",
-
-    "Cada árvore preservada representa mais vida para as próximas gerações.",
-
-    "Tecnologia e sustentabilidade caminham juntas no campo moderno.",
-
-    "O agro sustentável protege o planeta enquanto alimenta o mundo.",
-
-    "O futuro da agricultura depende das escolhas feitas hoje."
-
-];
-
-const fraseDiv = document.createElement("div");
-
-fraseDiv.className = "frase-dia";
-
-fraseDiv.innerHTML =
-frases[Math.floor(Math.random() * frases.length)];
-
-document.body.insertBefore(fraseDiv, document.body.firstChild);
-
-// ===========================
-// CONTADOR DE ESTATÍSTICAS
-// ===========================
-
-const numeros = document.querySelectorAll(".contador");
-
-numeros.forEach(numero => {
-
-    const atualizar = () => {
-
-        const alvo = +numero.getAttribute("data-target");
-
-        const atual = +numero.innerText;
-
-        const incremento = alvo / 100;
-
-        if(atual < alvo){
-
-            numero.innerText =
-            Math.ceil(atual + incremento);
-
-            setTimeout(atualizar, 25);
-
-        }else{
-
-            numero.innerText = alvo;
-
-        }
-
-    };
-
-    atualizar();
-
-});
-
-// ===========================
-// QUIZ AGRINHO
-// ===========================
-
-function verificarQuiz(){
-
-    const resposta =
-    document.querySelector(
-        'input[name="quiz"]:checked'
-    );
-
-    if(!resposta){
-
-        alert("Selecione uma resposta.");
-        return;
-
-    }
-
-    const resultado =
-    document.getElementById("resultadoQuiz");
-
-    if(resposta.value === "correta"){
-
-        resultado.innerHTML =
-        "✅ Parabéns! A sustentabilidade busca equilibrar produção e preservação ambiental.";
-
-        resultado.style.color = "green";
-
-    }else{
-
-        resultado.innerHTML =
-        "❌ Não foi dessa vez. Sustentabilidade significa produzir preservando os recursos naturais.";
-
-        resultado.style.color = "red";
-
-    }
-
 }
+
+/* ==========================================================================
+   2. SISTEMA DE IMERSÃO: GERADOR ALEATÓRIO DE FOLHAS CAINDO
+   ========================================================================== */
+function gerarFolhasDecorativas() {
+    // Array com variações de folhas/mudas para deixar o visual dinâmico
+    const tiposDeFolhas = ['🍃', '🍂', '🍁', '🌱'];
+    const quantidadeDeFolhas = 12; // Número de folhas extras flutuando na tela
+
+    for (let i = 0; i < quantidadeDeFolhas; i++) {
+        // Cria um novo elemento span para a folha
+        const folha = document.createElement('span');
+        
+        // Escolhe um emoji de folha aleatório do nosso array
+        const folhaAleatoria = tiposDeFolhas[Math.floor(Math.random() * tiposDeFolhas.length)];
+        folha.textContent = folhaAleatoria;
+
+        // Aplica estilos básicos diretamente via JS para permitir a aleatoriedade
+        folha.style.position = 'fixed';
+        folha.style.top = '-50px';
+        folha.style.zIndex = '9999';
+        folha.style.pointerEvents = 'none'; // Não atrapalha os cliques do usuário
+        
+        // Define uma posição horizontal (esquerda) aleatória entre 5% e 95% da tela
+        folha.style.left = Math.random() * 90 + 5 + '%';
+        
+        // Tamanhos variados para dar sensação de profundidade (folhas perto e longe)
+        folha.style.fontSize = Math.random() * (28 - 16) + 16 + 'px';
+        
+        // Tempo que a folha demora para cair (entre 8 e 18 segundos)
+        const duracaoCair = Math.random() * (18 - 8) + 8;
+        
+        // Tempo de atraso para a folha começar a cair (para não caírem todas juntas no início)
+        const atrasoInicio = Math.random() * 10;
+
+        // Aplica a animação que criamos lá no CSS (style.css)
+        folha.style.animation = `cairFolhas ${duracaoCair}s linear ${atrasoInicio}s infinite`;
+        
+        // Define uma opacidade suave para ficar de acordo com a estética soft
+        folha.style.opacity = Math.random() * (0.7 - 0.3) + 0.3;
+
+        // Adiciona a folha dentro do body do site
+        document.body.appendChild(folha);
+    }
+}
+
+// Executa a função de gerar folhas assim que toda a página HTML terminar de carregar
+window.addEventListener('DOMContentLoaded', gerarFolhasDecorativas);
